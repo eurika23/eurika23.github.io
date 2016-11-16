@@ -30,7 +30,7 @@ d3.csv("data.csv", function(error, data) {
         data.forEach(function(d) {
           d.date = parseDate(d.date);
           d.close = +d.close;
-        })});
+        });
 
       // Scale the range of the data
       var x = d3.scaleTime().range([0, width]); // Change from: d3.time.scale().range([0, width]);
