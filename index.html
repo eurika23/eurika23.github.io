@@ -26,44 +26,19 @@
 
       var parseDate = d3.timeParse("%d-%b-%y"); // Change from: d3.time.format("%d-%b-%y").parse;
 
-      // Making my own data object
-      var myData = [
-        {
-          "date": parseDate('1-May-12'),
-          "close": 58.13
-        },
-        {
-          "date": parseDate('30-Apr-12'),
-          "close": 53.98
-        },
-        {
-          "date": parseDate('27-Apr-12'),
-          "close": 67.00
-        },
-        {
-          "date": parseDate('26-Apr-12'),
-          "close": 89.70
-        },
-        {
-          "date": parseDate('25-Apr-12'),
-          "close": 99.00
-        }
-      ];
-      
-      d3.csv("data.csv", function(error, dataset) {
+d3.csv("data.csv", function(error, dataset) {
         dataset.forEach(function(d) {
           d.date = parseDate(d.date);
           d.close = +d.close;
-        });
-
+        })});
 
       // Scale the range of the data
       var x = d3.scaleTime().range([0, width]); // Change from: d3.time.scale().range([0, width]);
       var y = d3.scaleLinear().range([height,0]); // Change from: d3.scale.linear().range([height, 0]);
 
       // Set max-min date and close
-x.domain(d3.extent(myData, function(d) { return d.date; }));
-y.domain([0, d3.max(myData, function(d) { return d.close; })]);
+x.domain(d3.extent(dataset, function(d) { return d.date; }));
+y.domain([0, d3.max(dataset, function(d) { return d.close; })]);
 
       var xAxis = d3.axisBottom(x).ticks(5);// Change from: d3.svg.axis().scale(x).orient("bottom").ticks(5);
       var yAxis = d3.axisLeft(y).ticks(5);// Change from: d3.svg.axis().scale(y).orient("left").ticks(5);
@@ -75,7 +50,7 @@ y.domain([0, d3.max(myData, function(d) { return d.close; })]);
 
       svg.append("path")		// Add the valueline path.
         .attr("class", "line")
-        .attr("d", valueline(myData));
+        .attr("d", valueline(dataset));
 
       svg.append("g")			// Add the X Axis
         .attr("class", "x axis")
