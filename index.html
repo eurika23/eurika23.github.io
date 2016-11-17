@@ -50,7 +50,7 @@ var area = d3.area()
     .y1(function(d) { return y(d.close); });
     
     svg.append("path")
-        .datum(data)
+        .datum(dataset)
         .attr("class", "area")
         .attr("d", area);
     
