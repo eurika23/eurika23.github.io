@@ -1,8 +1,8 @@
-body { font: 14px Impact;}
+body { font: 14px Arial;}
 
 path {
-  stroke: orange;
-  stroke-width: 5;
+  stroke: magenta;
+  stroke-width: 1;
   fill: none;
 }
 
@@ -10,13 +10,13 @@ path {
 
 .axis line {
   fill: none;
-  stroke: grey;
-  stroke-width: 1;
+  stroke: violet;
+  stroke-width: 2;
   shape-rendering: crispEdges;
 }
 
 .area {
-    fill: aqua;
+    fill: yellow;
     stroke-width: 0;
 
 }
