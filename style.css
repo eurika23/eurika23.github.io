@@ -1,8 +1,8 @@
 body { font: 14px Impact;}
 
 path {
-  stroke: maroon;
-  stroke-width: 3;
+  stroke: orange;
+  stroke-width: 5;
   fill: none;
 }
 
@@ -16,7 +16,7 @@ path {
 }
 
 .area {
-    fill: lightsteelblue;
+    fill: aqua;
     stroke-width: 0;
 
 }
