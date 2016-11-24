@@ -26,19 +26,12 @@
 
       var parseDate = d3.timeParse("%y"); // Change from: d3.time.format("%d-%b-%y").parse;
       
- d3.csv('data4.csv', convert, init); //load data, convert, then initialize chart
+ d3.csv("data4.csv", function(error, myData) {
+        myData.forEach(function(d) {
+          d.date = parseDate(d.date);
+          d.close = +d.close;
+        });
 
-  function convert(d) {
-    return {
-      date: new Date(d.date),
-      value: +d.value         // convert string to number
-    };
-    
-      //called once the data is loaded
-  function init(csv) {
-    data = csv;
-    
-  } 
       // Scale the range of the data
       var x = d3.scaleTime().range([0, width]); // Change from: d3.time.scale().range([0, width]);
       var y = d3.scaleLinear().range([height,0]); // Change from: d3.scale.linear().range([height, 0]);
@@ -67,7 +60,7 @@
       svg.append("g")			// Add the Y Axis
         .attr("class", "y axis")
         .call(yAxis);
-};
+});
     </script>
 
   </body>
