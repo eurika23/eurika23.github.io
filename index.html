@@ -38,12 +38,7 @@
   function init(csv) {
     data = csv;
     
-  } d3.csv("data4.csv", function(error, myData) {
-        myData.forEach(function(d) {
-          d.date = parseDate(d.date);
-          d.close = +d.close;
-        });
-
+  } 
       // Scale the range of the data
       var x = d3.scaleTime().range([0, width]); // Change from: d3.time.scale().range([0, width]);
       var y = d3.scaleLinear().range([height,0]); // Change from: d3.scale.linear().range([height, 0]);
