@@ -24,11 +24,11 @@
       .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
 
-      var parseDate = d3.timeFormat("%y"); // Change from: d3.time.format("%d-%b-%y").parse;
+      var parseDate = d3.timeParse("%y"); // Change from: d3.time.format("%d-%b-%y").parse;
       
 d3.csv("data4.csv", function(error, myData) {
         myData.forEach(function(d) {
-          d.date = timeFormat(d.date);
+          d.date = parseDate(d.date);
           d.close = +d.close;
         });
 
