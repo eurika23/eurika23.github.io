@@ -24,9 +24,9 @@
       .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
 
-      var parseDate = d3.timeParse("%d-%b-%y"); // Change from: d3.time.format("%d-%b-%y").parse;
+      var parseDate = d3.timeParse("%y"); // Change from: d3.time.format("%d-%b-%y").parse;
 
-d3.csv("data.csv", function(error, dataset) {
+d3.csv("data3.csv", function(error, dataset) {
         dataset.forEach(function(d) {
           d.date = parseDate(d.date);
           d.close = +d.close;
@@ -58,9 +58,17 @@ var area = d3.area()
       .x(function(d) { return x(d.date); })
       .y(function(d) { return y(d.close); });
 
+      var valueline2 = d3.line()
+    .x(function(d) { return x(d.date); })
+    .y(function(d) { return y(d.open); });
+      
       svg.append("path")		// Add the valueline path.
         .attr("class", "line")
         .attr("d", valueline(dataset));
+        
+      svg.append("path")          // Add the valueline2 path.
+        .style("stroke", "red")
+        .attr("d", valueline2(dataset));
 
       svg.append("g")			// Add the X Axis
         .attr("class", "x axis")
