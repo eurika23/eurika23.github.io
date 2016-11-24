@@ -38,7 +38,11 @@
   function init(csv) {
     data = csv;
     
-
+  } d3.csv("data4.csv", function(error, myData) {
+        myData.forEach(function(d) {
+          d.date = parseDate(d.date);
+          d.close = +d.close;
+        });
 
       // Scale the range of the data
       var x = d3.scaleTime().range([0, width]); // Change from: d3.time.scale().range([0, width]);
@@ -68,7 +72,7 @@
       svg.append("g")			// Add the Y Axis
         .attr("class", "y axis")
         .call(yAxis);
-}};
+});
     </script>
 
   </body>
