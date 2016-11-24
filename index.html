@@ -65,11 +65,7 @@ var area = d3.area()
       svg.append("path")		// Add the valueline path.
         .attr("class", "line")
         .attr("d", valueline(dataset));
-        
-      svg.append("path")          // Add the valueline2 path.
-        .style("stroke", "red")
-        .attr("class", "line")
-        .attr("d", valueline2(dataset));
+ 
 
       svg.append("g")			// Add the X Axis
         .attr("class", "x axis")
