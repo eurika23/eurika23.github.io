@@ -41,7 +41,7 @@
       x.domain(d3.extent(myData, function(d) { return d.date; }));
       y.domain([0, d3.max(myData, function(d) { return Math.max(d.close, d.open); })]);
 
-      var xAxis = d3.axisBottom(x).ticks(5);// Change from: d3.svg.axis().scale(x).orient("bottom").ticks(5);
+      var xAxis = d3.axisBottom(x).ticks(10);// Change from: d3.svg.axis().scale(x).orient("bottom").ticks(5);
       var yAxis = d3.axisLeft(y).ticks(5);// Change from: d3.svg.axis().scale(y).orient("left").ticks(5);
 
 	  var area2 = d3.area()	
