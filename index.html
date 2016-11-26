@@ -10,7 +10,6 @@
 
   </head>
   <body>
-	<h1>Male vs. Female U.S. Income Comparison</h1>
     <script>
        var margin = {top: 30, right: 20, bottom: 30, left: 50},
           width = 600 - margin.left - margin.right,
@@ -24,6 +23,13 @@
       .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
 
+      svg.append("h1")
+      .attr("x", width / 2 )
+      .attr("y", 0)
+      .style("text-anchor", "middle")
+      .text("Male vs. Female U.S. Income Comparison");
+      
+      
       var parseDate = d3.timeParse("%Y"); // Change from: d3.time.format("%d-%b-%y").parse;
       
  d3.csv("data4.csv", function(error, myData) {
