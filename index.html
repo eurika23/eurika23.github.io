@@ -59,10 +59,10 @@ function make_y_axis() {
 	  svg.append("g")			
         .attr("class", "grid")
         .attr("transform", "translate(0," + height + ")")
-        .call(make_x_axis()
+        .call(make_x_axis())
             axis.tickSize(-height, 0, 0)
             axis.tickFormat("")
-        )
+    
 
     svg.append("g")			
         .attr("class", "grid")
