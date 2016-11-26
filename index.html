@@ -71,6 +71,7 @@
       .y(function(d) { return y(d.close); });
 
      var valueline2 = d3.line()	
+     d3.curveBasisOpen
      .x(function(d) { return x(d.date); })
      .y(function(d) { return y(d.open); });
      
