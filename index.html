@@ -47,7 +47,8 @@
 	  var area2 = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
-	  .y1(function(d) { return y(d.open); });
+	  .y1(function(d) { return y(d.open); })
+	  .curve(d3.curveBasisOpen);
 	  
 	  svg.append("path")
 	  .datum(myData)
@@ -59,7 +60,8 @@
 	  var area = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
-	  .y1(function(d) { return y(d.close); });
+	  .y1(function(d) { return y(d.close); })
+	  .curve(d3.curveBasisOpen);
 	  
 	  svg.append("path")
 	  .datum(myData)
@@ -68,12 +70,13 @@
       
       var valueline = d3.line() // Change from: d3.svg.line()
       .x(function(d) { return x(d.date); })
-      .y(function(d) { return y(d.close); });
+      .y(function(d) { return y(d.close); })
+      .curve(d3.curveBasisOpen);
 
      var valueline2 = d3.line()	
-     d3.curveBasisOpen
      .x(function(d) { return x(d.date); })
-     .y(function(d) { return y(d.open); });
+     .y(function(d) { return y(d.open); })
+     .curve(d3.curveBasisOpen);
      
       svg.append("path")		// Add the valueline path.
         .attr("class", "line")
