@@ -45,6 +45,7 @@
       var yAxis = d3.axisLeft(y).ticks(5);// Change from: d3.svg.axis().scale(y).orient("left").ticks(5);
 
 	  var area2 = d3.area()
+	  .interpolate("basis")	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
 	  .y1(function(d) { return y(d.open); });
@@ -58,6 +59,7 @@
 	  //
 	  
 	  var area = d3.area()
+	  .interpolate("basis")	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
 	  .y1(function(d) { return y(d.close); });
@@ -68,10 +70,12 @@
 	  .attr("d", area);
       
       var valueline = d3.line() // Change from: d3.svg.line()
+      .interpolate("basis")	
       .x(function(d) { return x(d.date); })
       .y(function(d) { return y(d.close); });
 
      var valueline2 = d3.line()
+    .interpolate("basis")	
     .x(function(d) { return x(d.date); })
     .y(function(d) { return y(d.open); });
      
