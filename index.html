@@ -44,13 +44,13 @@
   function make_x_axis() {		
     return d3.axisBottom()
         axis.scale(x)
-        .ticks(10)
+        axis.ticks(10)
 }
 
 function make_y_axis() {		
     return d3.axisLeft()
         axis.scale(y)
-        .ticks(5)
+        axis.ticks(5)
 }
  
       var xAxis = d3.axisBottom(x).ticks(10);// Change from: d3.svg.axis().scale(x).orient("bottom").ticks(5);
