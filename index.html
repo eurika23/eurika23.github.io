@@ -101,6 +101,20 @@
         .attr("class", "y axis")
         .call(yAxis);
 
+      svg.append("text")
+       .attr("transform", "translate("+(width+3)+","+y(myData[0].open)+")")
+       .attr("dy", ".35em")
+       .attr("text-anchor", "start")
+       .style("fill", "red")
+       .text("Males");
+       
+       svg.append("text")
+       .attr("transform", "translate("+(width+3)+","+y(myData[0].close)+")")
+       .attr("dy", ".35em")
+       .attr("text-anchor", "start")
+       .style("fill", "magenta")
+       .text("Females");
+
 	  svg.append("text")
         .attr("transform", "rotate(-90)")
         .attr("y", 0 - margin.left)
