@@ -42,16 +42,12 @@
       y.domain([0, d3.max(myData, function(d) { return Math.max(d.close, d.open); })]);
 
   function make_x_axis() {		
-    return d3.axisBottom()
-        axis.scale(x)
-        axis.ticks(10)
-}
+    return d3.axisBottom(x).ticks(10)
+};
 
 function make_y_axis() {		
-    return d3.axisLeft()
-        axis.scale(y)
-        axis.ticks(5)
-}
+    return d3.axisLeft(y).ticks(5)
+};
  
       var xAxis = d3.axisBottom(x).ticks(10);// Change from: d3.svg.axis().scale(x).orient("bottom").ticks(5);
       var yAxis = d3.axisLeft(y).ticks(5);// Change from: d3.svg.axis().scale(y).orient("left").ticks(5);
@@ -63,7 +59,6 @@ function make_y_axis() {
             axis.tickSize(-height, 0, 0)
             axis.tickFormat("")
     
-
     svg.append("g")			
         .attr("class", "grid")
         .call(make_y_axis())
