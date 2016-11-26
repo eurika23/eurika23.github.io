@@ -26,6 +26,18 @@
       
       var parseDate = d3.timeParse("%Y"); // Change from: d3.time.format("%d-%b-%y").parse;
  
+// gridlines in x axis function
+function make_x_gridlines() {		
+    return d3.axisBottom(x)
+        .ticks(10)
+}
+
+// gridlines in y axis function
+function make_y_gridlines() {		
+    return d3.axisLeft(y)
+        .ticks(5)
+}
+
  d3.csv("data4.csv", function(error, myData) {
         myData.forEach(function(d) {
           d.date = parseDate(d.date);
@@ -41,29 +53,26 @@
       x.domain(d3.extent(myData, function(d) { return d.date; }));
       y.domain([0, d3.max(myData, function(d) { return Math.max(d.close, d.open); })]);
 
-  function make_x_axis() {		
-    return d3.axisBottom(x).ticks(10)
-};
-
-function make_y_axis() {		
-    return d3.axisLeft(y).ticks(5)
-};
  
       var xAxis = d3.axisBottom(x).ticks(10);// Change from: d3.svg.axis().scale(x).orient("bottom").ticks(5);
       var yAxis = d3.axisLeft(y).ticks(5);// Change from: d3.svg.axis().scale(y).orient("left").ticks(5);
 
-	  svg.append("g")			
-        .attr("class", "grid")
-        .attr("transform", "translate(0," + height + ")")
-        .call(make_x_axis())
-            axis.tickSize(-height, 0, 0)
-            axis.tickFormat("")
-    
-    svg.append("g")			
-        .attr("class", "grid")
-        .call(make_y_axis())
-            axis.tickSize(-width, 0, 0)
-            axis.tickFormat("")
+ // add the X gridlines
+  svg.append("g")			
+      .attr("class", "grid")
+      .attr("transform", "translate(0," + height + ")")
+      .call(make_x_gridlines()
+          .tickSize(-height)
+          .tickFormat("")
+      )
+
+  // add the Y gridlines
+  svg.append("g")			
+      .attr("class", "grid")
+      .call(make_y_gridlines()
+          .tickSize(-width)
+          .tickFormat("")
+      )
 
 	  var area2 = d3.area()	
 	  .x(function(d) { return x(d.date); })
