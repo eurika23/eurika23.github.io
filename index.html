@@ -18,7 +18,7 @@
 
       var svg = d3.select("body")
       .append("svg")
-      .attr("width", width + margin.left - "1em" + margin.right)
+      .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
       .append("g")
       .attr("transform",
@@ -34,7 +34,7 @@
         });
 
       // Scale the range of the data
-      var x = d3.scaleTime().range([0, width]); // Change from: d3.time.scale().range([0, width]);
+      var x = d3.scaleTime().range(["1em", width]); // Change from: d3.time.scale().range([0, width]);
       var y = d3.scaleLinear().range([height,0]); // Change from: d3.scale.linear().range([height, 0]);
 
       // Set max-min date and close
