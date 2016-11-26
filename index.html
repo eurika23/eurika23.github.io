@@ -58,11 +58,11 @@
 	  .style("stroke-width", "0");
 	  //
 	  
-	  var area = d3.area()
-	  d3.interpolateBasis	
+	  var area = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
-	  .y1(function(d) { return y(d.close); });
+	  .y1(function(d) { return y(d.close); })
+	  .curve(d3.curveCatmullRom.alpha(0.5));;
 	  
 	  svg.append("path")
 	  .datum(myData)
@@ -70,14 +70,14 @@
 	  .attr("d", area);
       
       var valueline = d3.line() // Change from: d3.svg.line()
-      d3.interpolateBasis	
       .x(function(d) { return x(d.date); })
-      .y(function(d) { return y(d.close); });
+      .y(function(d) { return y(d.close); })
+      .curve(d3.curveCatmullRom.alpha(0.5));
 
-     var valueline2 = d3.line()
-     d3.interpolateBasis	
+     var valueline2 = d3.line()	
      .x(function(d) { return x(d.date); })
-     .y(function(d) { return y(d.open); });
+     .y(function(d) { return y(d.open); })
+     .curve(d3.curveCatmullRom.alpha(0.5));;
      
       svg.append("path")		// Add the valueline path.
         .attr("class", "line")
