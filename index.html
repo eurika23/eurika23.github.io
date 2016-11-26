@@ -47,7 +47,7 @@
 	  var area2 = d3.area()
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
-	  .y2(function(d) { return y(d.open); });
+	  .y1(function(d) { return y(d.open); });
 	  
 	  svg.append("path")
 	  .datum(myData)
