@@ -83,7 +83,7 @@
         .attr("d", valueline(myData));
 
       svg.append("path")          // Add the valueline2 path.
-        .style("stroke", "red")
+        .style("stroke", "blue")
         .attr("d", valueline2(myData));
         
       svg.append("g")			// Add the X Axis
@@ -105,7 +105,7 @@
        .attr("transform", "translate("+(width+3)+","+y(myData[0].open)+")")
        .attr("dy", ".35em")
        .attr("text-anchor", "start")
-       .style("fill", "red")
+       .style("fill", "blue")
        .text("Males");
        
        svg.append("text")
