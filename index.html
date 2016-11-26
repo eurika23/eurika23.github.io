@@ -47,7 +47,7 @@
 	  var area2 = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
-	  .y1(function(d) { return y(d.open); });
+	  .y1(function(d) { return y(d.open); })
 	  .curve(d3.curveCatmullRom.alpha(0.5));
 	  
 	  svg.append("path")
@@ -62,7 +62,7 @@
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
 	  .y1(function(d) { return y(d.close); })
-	  .curve(d3.curveCatmullRom.alpha(0.5));;
+	  .curve(d3.curveCatmullRom.alpha(0.5));
 	  
 	  svg.append("path")
 	  .datum(myData)
