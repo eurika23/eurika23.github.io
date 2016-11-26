@@ -1,4 +1,6 @@
-body { font: 14px Arial;
+body { 
+  font: 14px Arial;
+  width: 600px;
 }
 
 h1 {
