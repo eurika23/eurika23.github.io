@@ -47,8 +47,7 @@
 	  var area2 = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
-	  .y1(function(d) { return y(d.open); })
-	  .curve(d3.curveCatmullRom.alpha(0.5));
+	  .y1(function(d) { return y(d.open); });
 	  
 	  svg.append("path")
 	  .datum(myData)
@@ -56,13 +55,11 @@
 	  .attr("d", area2)
 	  .style("fill", "aqua")
 	  .style("stroke-width", "0");
-	  //
 	  
 	  var area = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
-	  .y1(function(d) { return y(d.close); })
-	  .curve(d3.curveCatmullRom.alpha(0.5));
+	  .y1(function(d) { return y(d.close); });
 	  
 	  svg.append("path")
 	  .datum(myData)
@@ -71,13 +68,11 @@
       
       var valueline = d3.line() // Change from: d3.svg.line()
       .x(function(d) { return x(d.date); })
-      .y(function(d) { return y(d.close); })
-      .curve(d3.curveCatmullRom.alpha(0.5));
+      .y(function(d) { return y(d.close); });
 
      var valueline2 = d3.line()	
      .x(function(d) { return x(d.date); })
-     .y(function(d) { return y(d.open); })
-     .curve(d3.curveCatmullRom.alpha(0.5));;
+     .y(function(d) { return y(d.open); });
      
       svg.append("path")		// Add the valueline path.
         .attr("class", "line")
