@@ -107,7 +107,7 @@ function make_y_gridlines() {
 	    var area5 = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
-	  .y1(function(d) { return y(d.Asian F); })
+	  .y1(function(d) { return y(d.AsianF); })
 	  .curve(d3.curveBasisOpen);
 	  
 	   svg.append("path")
