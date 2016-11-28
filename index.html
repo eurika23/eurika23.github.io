@@ -86,7 +86,7 @@ function make_y_gridlines() {
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
 	  .y1(function(d) { return y(d.open); })
-	  .curve(d3.curveBasisOpen);
+	  .curve(d3.curveBasis);
 	  
 	  svg.append("path")
 	  .datum(myData)
@@ -99,7 +99,7 @@ function make_y_gridlines() {
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
 	  .y1(function(d) { return y(d.close); })
-	  .curve(d3.curveBasisOpen);
+	  .curve(d3.curveBasis);
 	  
 	  svg.append("path")
 	  .datum(myData)
@@ -109,12 +109,12 @@ function make_y_gridlines() {
       var valueline = d3.line() // Change from: d3.svg.line()
       .x(function(d) { return x(d.date); })
       .y(function(d) { return y(d.close); })
-      .curve(d3.curveBasisOpen);
+      .curve(d3.curveBasis);
 
      var valueline2 = d3.line()	
      .x(function(d) { return x(d.date); })
      .y(function(d) { return y(d.open); })
-     .curve(d3.curveBasisOpen);
+     .curve(d3.curveBasis);
      
       svg.append("path")		// Add the valueline path.
         .attr("class", "line")
