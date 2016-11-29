@@ -164,8 +164,8 @@ function make_y_gridlines() {
         });
 
     // Get the data again
-    d3.csv("data5.csv", function(error, myData) {
-        myData.forEach(function(d) {
+    d3.csv("data5.csv", function(error, myData2) {
+        myData2.forEach(function(d) {
           d.date = parseDate(d.date);
           d.close = +d.close;
           d.open = +d.open;
@@ -193,16 +193,16 @@ function updateData() {
     // Make the changes
         svg.select(".area")   // change the area
             .duration(750)
-            .attr("d", area2(Mydata));
+            .attr("d", area2(Mydata2));
         svg.select(".area")   // change the area
             .duration(750)
-            .attr("d", area(Mydata));
+            .attr("d", area(Mydata2));
         svg.select(".line")   // change the line
             .duration(750)
-            .attr("d", valueline(Mydata));
+            .attr("d", valueline(Mydata2));
         svg.select("line") // change the x axis
             .duration(750)
-         .attr("d", valueline2(Mydata));
+         .attr("d", valueline2(Mydata2));
         svg.select(".x.axis") // change the x axis
             .duration(750)
             .call(xAxis);
