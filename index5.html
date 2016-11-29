@@ -186,10 +186,43 @@ function updateData() {
       x.domain(d3.extent(myData, function(d) { return d.date; }));
       y.domain([0, d3.max(myData, function(d) { return Math.max(d.close, d.open, d.AsianM, d.AsianW, d.BlackM, d.BlackW, d.HispanicM, d.HispanicW); })]);
       
-    // Select the section we want to apply our changes to
-    var svg = d3.select("body").transition();
+     var xAxis = d3.axisBottom(x).ticks(10);// Change from: d3.svg.axis().scale(x).orient("bottom").ticks(5);
+      var yAxis = d3.axisLeft(y).ticks(5);// Change from: d3.svg.axis().scale(y).orient("left").ticks(5);
 
-    // Make the changes
+// gridlines in x axis function
+function make_x_gridlines() {		
+    return d3.axisBottom(x)
+        .ticks(10)
+}
+
+// gridlines in y axis function
+function make_y_gridlines() {		
+    return d3.axisLeft(y)
+        .ticks(5)
+}
+
+ // add the X gridlines
+  svg.append("g")			
+      .attr("class", "grid")
+      .attr("transform", "translate(0," + height + ")")
+      .call(make_x_gridlines()
+          .tickSize(-height)
+          .tickFormat("")
+      )
+
+  // add the Y gridlines
+  svg.append("g")			
+      .attr("class", "grid")
+      .call(make_y_gridlines()
+          .tickSize(-width)
+          .tickFormat("")
+      )
+
+   
+    // Select the section we want to apply our changes to
+   /*   var svg = d3.select("body").transition();
+
+  // Make the changes
         svg.select(".area")   // change the area
             .duration(750)
             .attr("d", area2(myData));
@@ -207,7 +240,8 @@ function updateData() {
             .call(xAxis);
         svg.select(".y.axis") // change the y axis
             .duration(750)
-            .call(yAxis);
+            .call(yAxis); 
+            
 
       var area3 = d3.area()	
 	  .x(function(d) { return x(d.date); })
@@ -235,7 +269,7 @@ function updateData() {
 	  .style("fill", "aqua")
 	  .style("stroke-width", "0");
 	  	  
-	    var area5 = d3.area()	
+	  var area5 = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
 	  .y1(function(d) { return y(d.AsianF); })
@@ -419,7 +453,7 @@ function updateData() {
         .attr("dy", "1em")
         .style("text-anchor", "middle")
         .text("U.S. Dollars");
-
+*/
       });
       };
     </script>
