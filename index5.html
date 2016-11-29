@@ -218,26 +218,8 @@ function make_y_gridlines() {
     return d3.axisLeft(y)
         .ticks(5)
 };
-         // Select the section we want to apply our changes to
-    var svg = d3.select("body").transition();
 
-  // Make the changes
-        svg.select(".x.axis") // change the x axis
-            .duration(750)
-            .call(xAxis);
-        svg.select(".y.axis") // change the y axis
-            .duration(750)
-            .call(yAxis);
-
-  var svg = d3.select("body")
-      .append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-      .append("g")
-      .attr("transform",
-            "translate(" + margin.left + "," + margin.top + ")");    
-            
- // add the X gridlines
+// add the X gridlines
   svg.append("g")			
       .attr("class", "grid")
       .attr("transform", "translate(0," + height + ")")
@@ -254,6 +236,19 @@ function make_y_gridlines() {
           .tickFormat("")
       );
 
+         // Select the section we want to apply our changes to
+    var svg = d3.select("body").transition();
+
+  // Make the changes
+        svg.select(".x.axis") // change the x axis
+            .duration(750)
+            .call(xAxis);
+        svg.select(".y.axis") // change the y axis
+            .duration(750)
+            .call(yAxis);
+
+         
+ 
 /*    
       var asianManArea = d3.area()	
 	  .x(function(d) { return x(d.date); })
