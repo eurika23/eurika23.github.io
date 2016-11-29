@@ -222,22 +222,22 @@ function updateData() {
 function make_x_gridlines() {		
     return d3.axisBottom(x)
         .ticks(10)
-}
+};
 
 // gridlines in y axis function
 function make_y_gridlines() {		
     return d3.axisLeft(y)
         .ticks(5)
-}
+};
 
- // add the X gridlines
+ /* // add the X gridlines
   svg.append("g")			
       .attr("class", "grid")
       .attr("transform", "translate(0," + height + ")")
       .call(make_x_gridlines()
           .tickSize(-height)
           .tickFormat("")
-      )
+      );
 
   // add the Y gridlines
   svg.append("g")			
@@ -245,12 +245,10 @@ function make_y_gridlines() {
       .call(make_y_gridlines()
           .tickSize(-width)
           .tickFormat("")
-      )
-
-   
-            
- /* 
-      var area3 = d3.area()	
+      );
+*/
+    
+      var asianManArea = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
 	  .y1(function(d) { return y(d.AsianM); })
@@ -259,11 +257,11 @@ function make_y_gridlines() {
 	   svg.append("path")
 	  .datum(myData)
 	  .attr("class", "area")
-	  .attr("d", area2)
+	  .attr("d", asianManArea)
 	  .style("fill", "periwinkle")
 	  .style("stroke-width", "0");
 	  
-	  var area2 = d3.area()	
+	  var whiteManArea = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
 	  .y1(function(d) { return y(d.open); })
@@ -272,11 +270,11 @@ function make_y_gridlines() {
 	  svg.append("path")
 	  .datum(myData)
 	  .attr("class", "area")
-	  .attr("d", area2)
+	  .attr("d", whiteManArea)
 	  .style("fill", "aqua")
 	  .style("stroke-width", "0");
 	  	  
-	  var area5 = d3.area()	
+	 /* var area5 = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
 	  .y1(function(d) { return y(d.AsianF); })
