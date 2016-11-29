@@ -175,16 +175,18 @@ function make_y_gridlines() {
           d.AsianM = +d.AsianM;
           d.HispanicW = +d.HispanicW;
           d.HispanicM = +d.HispanicM;
-	    })});
-
-function updateData() {
-	  
+	    })
+	    
 	  var x = d3.scaleTime().range([0, width]); // Change from: d3.time.scale().range([0, width]);
       var y = d3.scaleLinear().range([height,0]); // Change from: d3.scale.linear().range([height, 0]);
 
  // Set max-min date and close
       x.domain(d3.extent(myData, function(d) { return d.date; }));
-      y.domain([0, d3.max(myData, function(d) { return Math.max(d.close, d.open); })]);
+      y.domain([0, d3.max(myData, function(d) { return Math.max(d.close, d.open); })]);});
+
+function updateData() {
+	  
+	 
       
     // Select the section we want to apply our changes to
     var svg = d3.select("body").transition();
