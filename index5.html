@@ -160,7 +160,8 @@ function make_y_gridlines() {
         .attr("x",0 - (height / 2))
         .attr("dy", "1em")
         .style("text-anchor", "middle")
-        .text("U.S. Dollars");
+        .text("U.S. Dollars")
+        });
 
     // Get the data again
     d3.csv("data5.csv", function(error, myData) {
@@ -419,7 +420,7 @@ function updateData() {
         .style("text-anchor", "middle")
         .text("U.S. Dollars");
 
-}});
+};
     </script>
 
   </body>
