@@ -141,6 +141,7 @@ function make_y_gridlines() {
         .call(yAxis);
 
       svg.append("text")
+       .attr("class", "axisLabel")
        .attr("transform", "translate("+(width+3)+","+y(myData[0].open)+")")
        .attr("dy", ".35em")
        .attr("text-anchor", "start")
@@ -148,6 +149,7 @@ function make_y_gridlines() {
        .text("Males");
        
        svg.append("text")
+       .attr("class", "axisLabel")
        .attr("transform", "translate("+(width+3)+","+y(myData[0].close)+")")
        .attr("dy", ".35em")
        .attr("text-anchor", "start")
@@ -163,9 +165,18 @@ function make_y_gridlines() {
         .text("U.S. Dollars")
         });
 
+function clearGraph() {
+	console.log('I am in clearGraph()!!!');
+	svg.selectAll("line").remove();
+    svg.selectAll("area").remove();
+    svg.selectAll("grid").remove();
+    svg.selectAll("axisLabel").remove();
+	}
+
 function updateData() {
     console.log('I am in updateData()!!!!');
        // Get the data again
+    
     d3.csv("data5.csv", function(error, myData) {
         myData.forEach(function(d) {
           d.date = parseDate(d.date);
@@ -187,7 +198,8 @@ function updateData() {
       y.domain([0, d3.max(myData, function(d) { return Math.max(d.close, d.open, d.AsianM, d.AsianW, d.BlackM, d.BlackW, d.HispanicM, d.HispanicW); })]);
       
      var xAxis = d3.axisBottom(x).ticks(10);// Change from: d3.svg.axis().scale(x).orient("bottom").ticks(5);
-      var yAxis = d3.axisLeft(y).ticks(5);// Change from: d3.svg.axis().scale(y).orient("left").ticks(5);
+     var yAxis = d3.axisLeft(y).ticks(5);// Change from: d3.svg.axis().scale(y).orient("left").ticks(5);
+
 
 // gridlines in x axis function
 function make_x_gridlines() {		
