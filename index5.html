@@ -122,6 +122,7 @@ function make_y_gridlines() {
         .attr("d", valueline(myData));
 
       svg.append("path")          // Add the valueline2 path.
+        .attr("class", "line")
         .style("stroke", "blue")
         .attr("d", valueline2(myData));
         
