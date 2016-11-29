@@ -166,14 +166,14 @@ function make_y_gridlines() {
         .text("U.S. Dollars")
         });
 
-/*function clearGraph() {
+function clearGraph() {
 	console.log('I am in clearGraph()!!!');
 	d3.selectAll(".line").remove();
     d3.selectAll(".area").remove();
     d3.selectAll(".grid").remove();
     d3.selectAll(".axisLabel").remove();
 	}
-*/
+
 function updateData() {
     console.log('I am in updateData()!!!!');
        // Get the data again
@@ -205,9 +205,22 @@ function updateData() {
      var xAxis = d3.axisBottom(x).ticks(10);// Change from: d3.svg.axis().scale(x).orient("bottom").ticks(5);
      var yAxis = d3.axisLeft(y).ticks(5);// Change from: d3.svg.axis().scale(y).orient("left").ticks(5);
 
-      //clearGraph();
+      clearGraph();
 
-  // gridlines in x axis function
+
+
+         // Select the section we want to apply our changes to
+    var svg = d3.select("body").transition();
+
+  // Make the changes
+        svg.select(".x.axis") // change the x axis
+            .duration(750)
+            .call(xAxis);
+        svg.select(".y.axis") // change the y axis
+            .duration(750)
+            .call(yAxis);
+
+     // gridlines in x axis function
 function make_x_gridlines() {		
     return d3.axisBottom(x)
         .ticks(10)
@@ -234,20 +247,7 @@ function make_y_gridlines() {
       .call(make_y_gridlines()
           .tickSize(-width)
           .tickFormat("")
-      );
-
-         // Select the section we want to apply our changes to
-    var svg = d3.select("body").transition();
-
-  // Make the changes
-        svg.select(".x.axis") // change the x axis
-            .duration(750)
-            .call(xAxis);
-        svg.select(".y.axis") // change the y axis
-            .duration(750)
-            .call(yAxis);
-
-         
+      );      
  
 /*    
       var asianManArea = d3.area()	
