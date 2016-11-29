@@ -222,13 +222,13 @@ function updateData() {
 function make_x_gridlines() {		
     return d3.axisBottom(x)
         .ticks(10)
-};
+}
 
 // gridlines in y axis function
 function make_y_gridlines() {		
     return d3.axisLeft(y)
         .ticks(5)
-};
+}
 
  // add the X gridlines
   svg.append("g")			
@@ -237,7 +237,7 @@ function make_y_gridlines() {
       .call(make_x_gridlines()
           .tickSize(-height)
           .tickFormat("")
-      );
+      )
 
   // add the Y gridlines
   svg.append("g")			
@@ -245,7 +245,7 @@ function make_y_gridlines() {
       .call(make_y_gridlines()
           .tickSize(-width)
           .tickFormat("")
-      );
+      )
 
    
             
