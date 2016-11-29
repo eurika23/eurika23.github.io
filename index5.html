@@ -167,10 +167,10 @@ function make_y_gridlines() {
 
 function clearGraph() {
 	console.log('I am in clearGraph()!!!');
-	svg.selectAll("line").remove();
-    svg.selectAll("area").remove();
-    svg.selectAll("grid").remove();
-    svg.selectAll("#axisLabel").remove();
+	d3.selectAll("#line").remove();
+    d3.selectAll("#area").remove();
+    d3.selectAll(".grid").remove();
+    d3.selectAll(".axisLabel").remove();
 	}
 
 function updateData() {
