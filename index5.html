@@ -182,11 +182,10 @@ function make_y_gridlines() {
 
  // Set max-min date and close
       x.domain(d3.extent(myData, function(d) { return d.date; }));
-      y.domain([0, d3.max(myData, function(d) { return Math.max(d.close, d.open); })]);});
+      y.domain([0, d3.max(myData, function(d) { return Math.max(d.close, d.open, d.AsianM, d.AsianW, d.BlackM, d.BlackW, d.HispanicM, d.HispanicW); })]);
+      });
 
 function updateData() {
-	  
-	 
       
     // Select the section we want to apply our changes to
     var svg = d3.select("body").transition();
