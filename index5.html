@@ -164,8 +164,8 @@ function make_y_gridlines() {
         });
 
     // Get the data again
-    d3.csv("data5.csv", function(error, myData2) {
-        myData2.forEach(function(d) {
+    d3.csv("data5.csv", function(error, myData) {
+        myData.forEach(function(d) {
           d.date = parseDate(d.date);
           d.close = +d.close;
           d.open = +d.open;
