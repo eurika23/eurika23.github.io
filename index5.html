@@ -207,9 +207,6 @@ function updateData() {
 
       clearGraph();
 
-if ("g") {
-  console.log('g is HERE!');
-  }
 
          // Select the section we want to apply our changes to
     var svg = d3.select("body").transition();
@@ -233,6 +230,11 @@ function make_y_gridlines() {
     return d3.axisLeft(y)
         .ticks(5)
 };
+
+if ("g") {
+  console.log('g is HERE!');
+  }
+
 
 // add the X gridlines
   svg.append("g")			
