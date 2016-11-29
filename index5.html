@@ -216,7 +216,7 @@ function make_y_gridlines() {
 };
 
  // add the X gridlines
-  svg.append("g")			
+ /*  svg.append("g")			
       .attr("class", "grid")
       .attr("transform", "translate(0," + height + ")")
       .call(make_x_gridlines()
@@ -225,7 +225,7 @@ function make_y_gridlines() {
       );
 
   // add the Y gridlines
- /*  svg.append("g")			
+  svg.append("g")			
       .attr("class", "grid")
       .call(make_y_gridlines()
           .tickSize(-width)
