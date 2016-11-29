@@ -163,7 +163,9 @@ function make_y_gridlines() {
         .text("U.S. Dollars")
         });
 
-    // Get the data again
+function updateData() {
+    
+       // Get the data again
     d3.csv("data5.csv", function(error, myData) {
         myData.forEach(function(d) {
           d.date = parseDate(d.date);
@@ -184,8 +186,6 @@ function make_y_gridlines() {
       x.domain(d3.extent(myData, function(d) { return d.date; }));
       y.domain([0, d3.max(myData, function(d) { return Math.max(d.close, d.open, d.AsianM, d.AsianW, d.BlackM, d.BlackW, d.HispanicM, d.HispanicW); })]);
       });
-
-function updateData() {
       
     // Select the section we want to apply our changes to
     var svg = d3.select("body").transition();
