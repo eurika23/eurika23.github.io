@@ -227,7 +227,7 @@ function updateData() {
             "translate(" + margin.left + "," + margin.top + ")");
 
   // gridlines in x axis function
-function make_x_gridlines() {		
+/*function make_x_gridlines() {		
     return d3.axisBottom(x)
         .ticks(10)
 };
@@ -253,7 +253,7 @@ function make_y_gridlines() {
           .tickSize(-width)
           .tickFormat("")
       );
- /*
+ */
     
       var asianManArea = d3.area()	
 	  .x(function(d) { return x(d.date); })
@@ -268,7 +268,7 @@ function make_y_gridlines() {
 	  .style("fill", "periwinkle")
 	  .style("stroke-width", "0");
 	  
-	  var whiteManArea = d3.area()	
+ /*	  var whiteManArea = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
 	  .y1(function(d) { return y(d.open); })
