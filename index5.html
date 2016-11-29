@@ -192,16 +192,16 @@ function updateData() {
     // Make the changes
         svg.select(".area")   // change the area
             .duration(750)
-            .attr("d", area2(mydata));
+            .attr("d", area2(myData));
         svg.select(".area")   // change the area
             .duration(750)
-            .attr("d", area(mydata));
+            .attr("d", area(myData));
         svg.select(".line")   // change the line
             .duration(750)
-            .attr("d", valueline(mydata));
+            .attr("d", valueline(myData));
         svg.select("line") // change the x axis
             .duration(750)
-         .attr("d", valueline2(mydata));
+         .attr("d", valueline2(myData));
         svg.select(".x.axis") // change the x axis
             .duration(750)
             .call(xAxis);
