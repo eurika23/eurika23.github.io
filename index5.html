@@ -164,7 +164,7 @@ function make_y_gridlines() {
         });
 
 function updateData() {
-    
+    console.log('I am in updateData()!!!!');
        // Get the data again
     d3.csv("data5.csv", function(error, myData) {
         myData.forEach(function(d) {
