@@ -253,7 +253,7 @@ if ("g") {
           .tickFormat("")
       );      
  
-    
+    /*
       var asianManArea = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
@@ -266,7 +266,7 @@ if ("g") {
 	  .attr("d", asianManArea)
 	  .style("fill", "periwinkle")
 	  .style("stroke-width", "0");
-	  
+	*/  
  	  var whiteManArea = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
@@ -293,7 +293,7 @@ if ("g") {
 	  .style("fill", "pink")
 	  .style("stroke-width", "0");
 	
-	  
+	 /* 
 	   var hispanicM = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
@@ -306,7 +306,7 @@ if ("g") {
 	  .attr("d", hispanicM)
 	  .style("fill", "cobalt")
 	  .style("stroke-width", "0");
-	  
+	 */ 
 	  
 	   var blackM = d3.area()	
 	  .x(function(d) { return x(d.date); })
@@ -321,6 +321,7 @@ if ("g") {
 	  .style("fill", "turquoise")
 	  .style("stroke-width", "0");
 	  
+	/*
 	  var whiteW = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
@@ -331,7 +332,7 @@ if ("g") {
 	  .datum(myData)
 	   .attr("class", "whiteW")
 	   .attr("d", close)
-	   .style("fill", "pink")
+	   .style("fill", "red")
 	  .style("stroke-width", "0");
 	  
 	    var blackW = d3.area()	
@@ -385,7 +386,7 @@ if ("g") {
      .y(function(d) { return y(d.AsianF); })
      .curve(d3.curveBasisOpen);
      
- /*      var valueline6 = d3.line()	
+       var valueline6 = d3.line()	
      .x(function(d) { return x(d.date); })
      .y(function(d) { return y(d.BlackM); })
      .curve(d3.curveBasisOpen);
