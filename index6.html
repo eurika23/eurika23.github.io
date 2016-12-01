@@ -538,8 +538,9 @@ function updateData() {
 
   // Make the changes
 
-        svg.select(".area")   // change the area
-            .duration(750)
+        svg.selectAll(".area")   // change the area
+            .duration(750);
+            /*
             .attr("d", asianManArea(myData)); 
           
         svg.select(".area")   // change the area
@@ -569,9 +570,10 @@ function updateData() {
        svg.select(".area")   // change the area
             .duration(750)
             .attr("d", hispanicW(myData));
-
-        svg.select(".line")   // change the line
-            .duration(750)
+*/
+        svg.selectAll(".line")   // change the line
+            .duration(750);
+            /*
             .attr("d", valuelineAM(myData));
 
         svg.select(".line")   // change the line
@@ -601,7 +603,7 @@ function updateData() {
         svg.select(".line")   // change the line
             .duration(750)
             .attr("d", valuelineHW(myData));
-
+*/
         svg.select(".x.axis") // change the x axis
             .duration(750)
             .call(xAxis);
