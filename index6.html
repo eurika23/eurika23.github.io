@@ -540,28 +540,68 @@ function updateData() {
 
         svg.select(".area")   // change the area
             .duration(750)
-            .attr("d", asianManArea(myData), whiteManArea(myData), asianW(myData), blackM(myData), hispanicM(myData), whiteW(myData), blackW(myData), hispanicW(myData)); 
-           /*
+            .attr("d", asianManArea(myData)); 
+          
+        svg.select(".area")   // change the area
+            .duration(750)
             .attr("d", whiteManArea(myData));
+            
+        svg.select(".area")   // change the area
+            .duration(750)    
             .attr("d", asianW(myData));
+            
+        svg.select(".area")   // change the area
+            .duration(750)    
             .attr("d", blackM(myData));
+        
+        svg.select(".area")   // change the area
+            .duration(750)
             .attr("d", hispanicM(myData));
+       
+       svg.select(".area")   // change the area
+            .duration(750)
             .attr("d", whiteW(myData));
+      
+      svg.select(".area")   // change the area
+            .duration(750)
             .attr("d", blackW(myData));
+       
+       svg.select(".area")   // change the area
+            .duration(750)
             .attr("d", hispanicW(myData));
 
         svg.select(".line")   // change the line
             .duration(750)
             .attr("d", valuelineAM(myData));
 
+        svg.select(".line")   // change the line
+            .duration(750)
             .attr("d", valuelineWM(myData));
+        
+         svg.select(".line")   // change the line
+            .duration(750)
             .attr("d", valuelineAW(myData));
+       
+        svg.select(".line")   // change the line
+            .duration(750)
             .attr("d", valuelineBM(myData));
+       
+        svg.select(".line")   // change the line
+            .duration(750)
             .attr("d", valuelineHM(myData));
+       
+        svg.select(".line")   // change the line
+            .duration(750)
             .attr("d", valuelineWM(myData));
+       
+        svg.select(".line")   // change the line
+            .duration(750)
             .attr("d", valuelineBW(myData));
+       
+        svg.select(".line")   // change the line
+            .duration(750)
             .attr("d", valuelineHW(myData));
-*/
+
         svg.select(".x.axis") // change the x axis
             .duration(750)
             .call(xAxis);
