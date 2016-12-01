@@ -365,6 +365,7 @@ function updateData() {
         svg.select(".area")   // change the area
             .duration(750)
             .attr("d", asianManArea(data));
+          /*
             .attr("d", whiteManArea(data));
             .attr("d", asianW(data));
             .attr("d", blackM(data));
@@ -372,9 +373,11 @@ function updateData() {
             .attr("d", whiteW(data));
             .attr("d", blackW(data));
             .attr("d", hispanicW(data));
+       */
         svg.select(".line")   // change the line
             .duration(750)
             .attr("d", valuelineAM(data));
+           /*
             .attr("d", valuelineWM(data));
             .attr("d", valuelineAW(data));
             .attr("d", valuelineBM(data));
@@ -382,6 +385,7 @@ function updateData() {
             .attr("d", valuelineWM(data));
             .attr("d", valuelineBW(data));
             .attr("d", valuelineHW(data));
+       */
         svg.select(".x.axis") // change the x axis
             .duration(750)
             .call(xAxis);
