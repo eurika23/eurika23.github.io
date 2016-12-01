@@ -17,7 +17,7 @@
                 value="Sort by Ethnicity" 
                 onclick="updateData()" />
 </div>
-	<h1>Male vs. Female U.S. Income Comparison</h1>
+	<h1>Income Comparison by Sex</h1>
     <script>
        var margin = {top: 30, right: 120, bottom: 30, left: 60},
           width = 800 - margin.left - margin.right,
@@ -494,6 +494,9 @@ if ("g") {
        .style("fill", "HotPink")
        .text("Hispanic Females");
 
+	d3.select("h1")
+		.append("text", "Income Comparison by Sex and Ethnicity" );
+		
       });
       };
     </script>
