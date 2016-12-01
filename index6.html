@@ -256,7 +256,7 @@ function make_y_gridlines() {
 	  .style("fill", "IndianRed")
 	  .style("stroke-width", "0");
         
-         var valuelineHF = d3.line()	
+         var valuelineHW = d3.line()	
      .x(function(d) { return x(d.date); })
      .y(function(d) { return y(d.HispanicW); })
      .curve(d3.curveBasis);
@@ -515,7 +515,7 @@ function updateData() {
 	  .style("fill", "IndianRed")
 	  .style("stroke-width", "0");
 */        
-         var valuelineHF = d3.line()	
+         var valuelineHW = d3.line()	
      .x(function(d) { return x(d.date); })
      .y(function(d) { return y(d.HispanicW); })
      .curve(d3.curveBasis);
