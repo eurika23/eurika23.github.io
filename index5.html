@@ -280,20 +280,20 @@ if ("g") {
 	  .style("fill", "aqua")
 	  .style("stroke-width", "0");
 	  	  
-	  var asianF = d3.area()	
+	  var asianW = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
-	  .y1(function(d) { return y(d.AsianF); })
+	  .y1(function(d) { return y(d.AsianW); })
 	  .curve(d3.curveBasisOpen);
 	  
 	   svg.append("path")
 	  .datum(myData)
 	  .attr("class", "area")
-	  .attr("d", asianF)
+	  .attr("d", asianW)
 	  .style("fill", "pink")
 	  .style("stroke-width", "0");
 	
-	/*  
+	  
 	   var hispanicM = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
@@ -321,7 +321,7 @@ if ("g") {
 	  .style("fill", "turquoise")
 	  .style("stroke-width", "0");
 	  
-	  var whiteF = d3.area()	
+	  var whiteW = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
 	  .y1(function(d) { return y(d.close); })
@@ -329,34 +329,34 @@ if ("g") {
 	  
 	  svg.append("path")
 	  .datum(myData)
-	   .attr("class", "area")
+	   .attr("class", "whiteW")
 	   .attr("d", close)
 	   .style("fill", "pink")
 	  .style("stroke-width", "0");
 	  
-	    var blackF = d3.area()	
+	    var blackW = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
-	  .y1(function(d) { return y(d.BlackF); })
+	  .y1(function(d) { return y(d.BlackW); })
 	  .curve(d3.curveBasisOpen);
 	  
 	   svg.append("path")
 	  .datum(myData)
 	  .attr("class", "area")
-	  .attr("d", blackF)
+	  .attr("d", blackW)
 	  .style("fill", "DeepPink")
 	  .style("stroke-width", "0");
 	  
-	  var hispanicF = d3.area()	
+	  var hispanicW = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
-	  .y1(function(d) { return y(d.HispanicF); })
+	  .y1(function(d) { return y(d.HispanicW); })
 	  .curve(d3.curveBasisOpen);
 	  
 	   svg.append("path")
 	  .datum(myData)
 	  .attr("class", "area")
-	  .attr("d", hispanicF)
+	  .attr("d", hispanicW)
 	  .style("fill", "IndianRed")
 	  .style("stroke-width", "0");
       
@@ -468,7 +468,7 @@ if ("g") {
         .attr("dy", "1em")
         .style("text-anchor", "middle")
         .text("U.S. Dollars");
-*/
+
       });
       };
     </script>
