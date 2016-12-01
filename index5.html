@@ -207,6 +207,17 @@ function updateData() {
 
       clearGraph();
 
+         // Select the section we want to apply our changes to
+ /*   var svg = d3.select("body").transition();
+
+  // Make the changes
+        svg.select(".x.axis") // change the x axis
+            .duration(750)
+            .call(xAxis);
+        svg.select(".y.axis") // change the y axis
+            .duration(750)
+            .call(yAxis);
+*/
      // gridlines in x axis function
 function make_x_gridlines() {		
     return d3.axisBottom(x)
@@ -241,7 +252,7 @@ if ("g") {
           .tickFormat("")
       );      
  
-   
+ 	/*  
       var asianManArea = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
@@ -309,7 +320,7 @@ if ("g") {
 	  .style("fill", "turquoise")
 	  .style("stroke-width", "0");
 	  
-	/*
+
 	  var whiteW = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
@@ -458,18 +469,6 @@ if ("g") {
         .style("text-anchor", "middle")
         .text("U.S. Dollars");
 */
-
-         // Select the section we want to apply our changes to
-  var svg = d3.select("body").transition();
-
-  // Make the changes
-        svg.select(".x.axis") // change the x axis
-            .duration(750)
-            .call(xAxis);
-        svg.select(".y.axis") // change the y axis
-            .duration(750)
-            .call(yAxis);
-
       });
       };
     </script>
