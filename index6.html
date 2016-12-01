@@ -537,7 +537,7 @@ function updateData() {
     var svg = d3.select("body").transition();
 
   // Make the changes
-       /*
+
         svg.select(".area")   // change the area
             .duration(750)
             .attr("d", asianManArea(myData)); 
@@ -548,11 +548,11 @@ function updateData() {
             .attr("d", whiteW(myData));
             .attr("d", blackW(myData));
             .attr("d", hispanicW(myData));
-       */
+
         svg.select(".line")   // change the line
             .duration(750)
             .attr("d", valuelineAM(myData));
-           /*
+
             .attr("d", valuelineWM(myData));
             .attr("d", valuelineAW(myData));
             .attr("d", valuelineBM(myData));
@@ -560,7 +560,7 @@ function updateData() {
             .attr("d", valuelineWM(myData));
             .attr("d", valuelineBW(myData));
             .attr("d", valuelineHW(myData));
-       */
+
         svg.select(".x.axis") // change the x axis
             .duration(750)
             .call(xAxis);
