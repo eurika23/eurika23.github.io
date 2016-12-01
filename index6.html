@@ -362,7 +362,9 @@ function updateData() {
     var svg = d3.select("body").transition();
 
   // Make the changes
-        svg.select(".area")   // change the line
+        svg.select(".path")   // change the path
+            .duration(750)
+        svg.select(".area")   // change the area
             .duration(750)
         svg.select(".line")   // change the line
             .duration(750)
