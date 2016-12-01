@@ -292,7 +292,19 @@ if ("g") {
 	  .style("fill", "pink")
 	  .style("stroke-width", "0");
 	
- 
+ 	   var blackM = d3.area()	
+	  .x(function(d) { return x(d.date); })
+	  .y0(height)
+	  .y1(function(d) { return y(d.BlackM); })
+	  .curve(d3.curveBasis);
+	  
+	   svg.append("path")
+	  .datum(myData)
+	  .attr("class", "area")
+	  .attr("d", blackM)
+	  .style("fill", "turquoise")
+	  .style("stroke-width", "0");
+	  
 	   var hispanicM = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
@@ -306,19 +318,7 @@ if ("g") {
 	  .style("fill", "CornFlowerBlue")
 	  .style("stroke-width", "0");
 	
-	  
-	   var blackM = d3.area()	
-	  .x(function(d) { return x(d.date); })
-	  .y0(height)
-	  .y1(function(d) { return y(d.BlackM); })
-	  .curve(d3.curveBasis);
-	  
-	   svg.append("path")
-	  .datum(myData)
-	  .attr("class", "area")
-	  .attr("d", blackM)
-	  .style("fill", "turquoise")
-	  .style("stroke-width", "0");
+	
 	  
 /*	
 	  var whiteW = d3.area()	
