@@ -283,6 +283,13 @@ if ("g") {
       svg.append("path")          // Add the valuelineAM path.
         .style("stroke", "navy")
         .attr("d", valuelineAM(myData));
+        
+     svg.append("text")
+       .attr("transform", "translate("+(width+3)+","+y(myData[0].AsianM)+")")
+       .attr("dy", ".35em")
+       .attr("text-anchor", "start")
+       .style("fill", "navy")
+       .text("Asian Males");
 	  
  	  var whiteManArea = d3.area()	
 	  .x(function(d) { return x(d.date); })
@@ -356,7 +363,14 @@ if ("g") {
     svg.append("path")          // Add the valuelineBM path.
         .style("stroke", "Teal")
         .attr("d", valuelineBM(myData));
-	  
+  
+     svg.append("text")
+       .attr("transform", "translate("+(width+3)+","+y(myData[0].BlackM)+")")
+       .attr("dy", ".35em")
+       .attr("text-anchor", "start")
+       .style("fill", "Teal")
+       .text("Black Males");
+       
 	   var hispanicM = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
@@ -379,6 +393,13 @@ if ("g") {
         .style("stroke", "slate")
         .attr("d", valuelineHM(myData));
 	
+     svg.append("text")
+       .attr("transform", "translate("+(width+3)+","+y(myData[0].HispanicM)+")")
+       .attr("dy", ".35em")
+       .attr("text-anchor", "start")
+       .style("fill", "slate")
+       .text("Hispanic Males");
+
 	  var whiteW = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
@@ -430,7 +451,14 @@ if ("g") {
         .style("stroke", "RebeccaPurple")
         .attr("d", valuelineBW(myData));
 
-	  var hispanicW = d3.area()	
+     svg.append("text")
+       .attr("transform", "translate("+(width+3)+","+y(myData[0].BlackW)+")")
+       .attr("dy", ".35em")
+       .attr("text-anchor", "start")
+       .style("fill", "RebeccaPurple")
+       .text("Black Females");
+       
+  var hispanicW = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
 	  .y1(function(d) { return y(d.HispanicW); })
@@ -452,6 +480,12 @@ if ("g") {
         .style("stroke", "HotPink")
         .attr("d", valuelineHF(myData));
 
+     svg.append("text")
+       .attr("transform", "translate("+(width+3)+","+y(myData[0].HispanicW)+")")
+       .attr("dy", ".35em")
+       .attr("text-anchor", "start")
+       .style("fill", "HotPink")
+       .text("Hispanic Females");
 
       });
       };
