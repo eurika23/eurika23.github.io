@@ -280,7 +280,7 @@ if ("g") {
 	  .style("fill", "aqua")
 	  .style("stroke-width", "0");
 	  	  
-	  var area5 = d3.area()	
+	  var asianF = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
 	  .y1(function(d) { return y(d.AsianF); })
@@ -289,11 +289,11 @@ if ("g") {
 	   svg.append("path")
 	  .datum(myData)
 	  .attr("class", "area")
-	  .attr("d", area4)
+	  .attr("d", asianF)
 	  .style("fill", "pink")
 	  .style("stroke-width", "0");
 	  
-	   var area4 = d3.area()	
+	   var hispanicM = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
 	  .y1(function(d) { return y(d.HispanicM); })
@@ -302,11 +302,11 @@ if ("g") {
 	   svg.append("path")
 	  .datum(myData)
 	  .attr("class", "area")
-	  .attr("d", area4)
+	  .attr("d", hispanicM)
 	  .style("fill", "cobalt")
 	  .style("stroke-width", "0");
 	  
-	   var area6 = d3.area()	
+	   var blackM = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
 	  .y1(function(d) { return y(d.BlackM); })
@@ -315,11 +315,11 @@ if ("g") {
 	   svg.append("path")
 	  .datum(myData)
 	  .attr("class", "area")
-	  .attr("d", area4)
+	  .attr("d", blackM)
 	  .style("fill", "turquoise")
 	  .style("stroke-width", "0");
 	  
-	  var area = d3.area()	
+	  var whiteF = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
 	  .y1(function(d) { return y(d.close); })
@@ -327,10 +327,12 @@ if ("g") {
 	  
 	  svg.append("path")
 	  .datum(myData)
-	  .attr("class", "area")
-	  .attr("d", area);
+	   .attr("class", "area")
+	   .attr("d", close)
+	   .style("fill", "pink")
+	  .style("stroke-width", "0");
 	  
-	    var area7 = d3.area()	
+	    var blackF = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
 	  .y1(function(d) { return y(d.BlackF); })
@@ -339,11 +341,11 @@ if ("g") {
 	   svg.append("path")
 	  .datum(myData)
 	  .attr("class", "area")
-	  .attr("d", area4)
+	  .attr("d", blackF)
 	  .style("fill", "DeepPink")
 	  .style("stroke-width", "0");
 	  
-	  var area8 = d3.area()	
+	  var hispanicF = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
 	  .y1(function(d) { return y(d.HispanicF); })
@@ -352,7 +354,7 @@ if ("g") {
 	   svg.append("path")
 	  .datum(myData)
 	  .attr("class", "area")
-	  .attr("d", area4)
+	  .attr("d", hispanicF)
 	  .style("fill", "IndianRed")
 	  .style("stroke-width", "0");
       
@@ -448,14 +450,14 @@ if ("g") {
        .attr("dy", ".35em")
        .attr("text-anchor", "start")
        .style("fill", "blue")
-       .text("Males");
+       .text("White Males");
        
        svg.append("text")
        .attr("transform", "translate("+(width+3)+","+y(myData[0].close)+")")
        .attr("dy", ".35em")
        .attr("text-anchor", "start")
        .style("fill", "magenta")
-       .text("Females");
+       .text("White Females");
 
 	  svg.append("text")
         .attr("transform", "rotate(-90)")
@@ -464,7 +466,7 @@ if ("g") {
         .attr("dy", "1em")
         .style("text-anchor", "middle")
         .text("U.S. Dollars");
-
+*/
       });
       };
     </script>
