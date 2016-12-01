@@ -307,11 +307,13 @@ function make_y_gridlines() {
 
 function clearGraph() {
 	console.log('I am in clearGraph()!!!');
+	/*
 	d3.selectAll(".line").remove();
     d3.selectAll(".area").remove();
     d3.selectAll(".grid").remove();
+    */
     d3.selectAll(".axisLabel").remove();
-    d3.selectAll(".axis").remove();
+   // d3.selectAll(".axis").remove();
 	}
 
 function updateData() {
@@ -341,9 +343,9 @@ function updateData() {
       console.log('x.domain() = ' + x.domain());
       console.log('y.domain() = ' + y.domain());
 
-      /*clearGraph();
+      clearGraph();
       
-    var xAxis = d3.axisBottom(x).ticks(10);// Change from: d3.svg.axis().scale(x).orient("bottom").ticks(5);
+   /* var xAxis = d3.axisBottom(x).ticks(10);// Change from: d3.svg.axis().scale(x).orient("bottom").ticks(5);
     var yAxis = d3.axisLeft(y).ticks(5);// Change from: d3.svg.axis().scale(y).orient("left").ticks(5);
 
   svg.append("g")			// Add the X Axis
@@ -365,8 +367,10 @@ function updateData() {
             .duration(750)
         svg.select(".x.axis") // change the x axis
             .duration(750)
+            .call(xAxis);
         svg.select(".y.axis") // change the y axis
             .duration(750)
+            .call(yAxis);
 
 /*
      // gridlines in x axis function
