@@ -538,7 +538,7 @@ function updateData() {
 
   // Make the changes
 
-        svg.selectAll(".area")   // change the area
+        svg.selectAll(".area").myData(myData).attr("class", "area")   // change the area
             .duration(750);
             /*
             .attr("d", asianManArea(myData)); 
@@ -571,7 +571,7 @@ function updateData() {
             .duration(750)
             .attr("d", hispanicW(myData));
 */
-        svg.selectAll(".line")   // change the line
+        svg.selectAll(".line").myData(myData).attr("class","line")
             .duration(750);
             /*
             .attr("d", valuelineAM(myData));
