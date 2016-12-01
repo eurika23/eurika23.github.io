@@ -540,7 +540,8 @@ function updateData() {
 
         svg.select(".area")   // change the area
             .duration(750)
-            .attr("d", asianManArea(myData)); 
+            .attr("d", asianManArea, whiteManArea(myData)); 
+           /*
             .attr("d", whiteManArea(myData));
             .attr("d", asianW(myData));
             .attr("d", blackM(myData));
@@ -560,7 +561,7 @@ function updateData() {
             .attr("d", valuelineWM(myData));
             .attr("d", valuelineBW(myData));
             .attr("d", valuelineHW(myData));
-
+*/
         svg.select(".x.axis") // change the x axis
             .duration(750)
             .call(xAxis);
