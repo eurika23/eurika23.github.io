@@ -341,6 +341,13 @@ if ("g") {
     svg.append("path")          // Add the valuelineAW path.
         .style("stroke", "red")
         .attr("d", valuelineAW(myData));  
+
+     svg.append("text")
+       .attr("transform", "translate("+(width+3)+","+y(myData[0].AsianW)+")")
+       .attr("dy", ".35em")
+       .attr("text-anchor", "start")
+       .style("fill", "red")
+       .text("Asian Females");
 	
  	   var blackM = d3.area()	
 	  .x(function(d) { return x(d.date); })
