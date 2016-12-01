@@ -305,8 +305,13 @@ if ("g") {
     svg.append("path")          // Add the valuelineWM path.
         .style("stroke", "blue")
         .attr("d", valuelineWM(myData));
-        
-    
+     
+     svg.append("text")
+       .attr("transform", "translate("+(width+3)+","+y(myData[0].open)+")")
+       .attr("dy", ".35em")
+       .attr("text-anchor", "start")
+       .style("fill", "blue")
+       .text("White Males");
         	  
 	  var asianW = d3.area()	
 	  .x(function(d) { return x(d.date); })
@@ -395,7 +400,7 @@ if ("g") {
       svg.append("path")		// Add the valuelineWW path.
         .attr("class", "line")
         .attr("d", valuelineWW(myData));
-       
+      
     svg.append("text")
        .attr("transform", "translate("+(width+3)+","+y(myData[0].close)+")")
        .attr("dy", ".35em")
@@ -446,6 +451,7 @@ if ("g") {
 	 svg.append("path")          // Add the valueline2 path.
         .style("stroke", "HotPink")
         .attr("d", valuelineHF(myData));
+
 
       });
       };
