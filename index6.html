@@ -46,7 +46,8 @@
           d.AsianM = +d.AsianM;
           d.HispanicW = +d.HispanicW;
           d.HispanicM = +d.HispanicM;
-	    })
+	    })        
+	    });
 
       // Scale the range of the data
       var x = d3.scaleTime().range([0, width]); // Change from: d3.time.scale().range([0, width]);
@@ -302,8 +303,8 @@ function make_y_gridlines() {
         .attr("x",0 - (height / 2))
         .attr("dy", "1em")
         .style("text-anchor", "middle")
-        .text("U.S. Dollars")
-        });
+        .text("U.S. Dollars");
+
 
 function clearGraph() {
 	console.log('I am in clearGraph()!!!');
