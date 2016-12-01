@@ -209,7 +209,7 @@ function updateData() {
 
 
          // Select the section we want to apply our changes to
-    var svg = d3.select("body").transition();
+ /*   var svg = d3.select("body").transition();
 
   // Make the changes
         svg.select(".x.axis") // change the x axis
@@ -218,7 +218,7 @@ function updateData() {
         svg.select(".y.axis") // change the y axis
             .duration(750)
             .call(yAxis);
-
+*/
      // gridlines in x axis function
 function make_x_gridlines() {		
     return d3.axisBottom(x)
@@ -253,7 +253,7 @@ if ("g") {
           .tickFormat("")
       );      
  
-/*    
+    
       var asianManArea = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
@@ -266,7 +266,7 @@ if ("g") {
 	  .attr("d", asianManArea)
 	  .style("fill", "periwinkle")
 	  .style("stroke-width", "0");
-	  
+/*	  
  	  var whiteManArea = d3.area()	
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
