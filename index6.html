@@ -48,7 +48,7 @@
           d.HispanicM = +d.HispanicM;
 	    })
 
-      // Scale the range of the data
+      // Scale the range of the myData
       var x = d3.scaleTime().range([0, width]); // Change from: d3.time.scale().range([0, width]);
       var y = d3.scaleLinear().range([height,0]); // Change from: d3.scale.linear().range([height, 0]);
 
@@ -318,7 +318,7 @@ function clearGraph() {
 
 function updateData() {
     console.log('I am in updateData()!!!!');
-       // Get the data again
+       // Get the myData again
     
     d3.csv("data5.csv", function(error, myData) {
         myData.forEach(function(d) {
@@ -540,26 +540,26 @@ function updateData() {
        /*
         svg.select(".area")   // change the area
             .duration(750)
-            .attr("d", asianManArea(data)); 
-            .attr("d", whiteManArea(data));
-            .attr("d", asianW(data));
-            .attr("d", blackM(data));
-            .attr("d", hispanicM(data));
-            .attr("d", whiteW(data));
-            .attr("d", blackW(data));
-            .attr("d", hispanicW(data));
+            .attr("d", asianManArea(myData)); 
+            .attr("d", whiteManArea(myData));
+            .attr("d", asianW(myData));
+            .attr("d", blackM(myData));
+            .attr("d", hispanicM(myData));
+            .attr("d", whiteW(myData));
+            .attr("d", blackW(myData));
+            .attr("d", hispanicW(myData));
        */
         svg.select(".line")   // change the line
             .duration(750)
-            .attr("d", valuelineAM(data));
+            .attr("d", valuelineAM(myData));
            /*
-            .attr("d", valuelineWM(data));
-            .attr("d", valuelineAW(data));
-            .attr("d", valuelineBM(data));
-            .attr("d", valuelineHM(data));
-            .attr("d", valuelineWM(data));
-            .attr("d", valuelineBW(data));
-            .attr("d", valuelineHW(data));
+            .attr("d", valuelineWM(myData));
+            .attr("d", valuelineAW(myData));
+            .attr("d", valuelineBM(myData));
+            .attr("d", valuelineHM(myData));
+            .attr("d", valuelineWM(myData));
+            .attr("d", valuelineBW(myData));
+            .attr("d", valuelineHW(myData));
        */
         svg.select(".x.axis") // change the x axis
             .duration(750)
