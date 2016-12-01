@@ -257,7 +257,7 @@ if ("g") {
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
 	  .y1(function(d) { return y(d.AsianM); })
-	  .curve(d3.curveBasisOpen);
+	  .curve(d3.curveBasis);
 	  
 	   svg.append("path")
 	  .datum(myData)
@@ -270,7 +270,7 @@ if ("g") {
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
 	  .y1(function(d) { return y(d.open); })
-	  .curve(d3.curveBasisOpen);
+	  .curve(d3.curveBasis);
 	  
 	  svg.append("path")
 	  .datum(myData)
@@ -283,7 +283,7 @@ if ("g") {
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
 	  .y1(function(d) { return y(d.AsianW); })
-	  .curve(d3.curveBasisOpen);
+	  .curve(d3.curveBasis);
 	  
 	   svg.append("path")
 	  .datum(myData)
@@ -297,13 +297,13 @@ if ("g") {
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
 	  .y1(function(d) { return y(d.HispanicM); })
-	  .curve(d3.curveBasisOpen);
+	  .curve(d3.curveBasis);
 	  
 	   svg.append("path")
 	  .datum(myData)
 	  .attr("class", "area")
 	  .attr("d", hispanicM)
-	  .style("fill", "cobalt")
+	  .style("fill", "CornFlowerBlue")
 	  .style("stroke-width", "0");
 	
 /*		  
@@ -311,7 +311,7 @@ if ("g") {
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
 	  .y1(function(d) { return y(d.BlackM); })
-	  .curve(d3.curveBasisOpen);
+	  .curve(d3.curveBasis);
 	  
 	   svg.append("path")
 	  .datum(myData)
@@ -325,7 +325,7 @@ if ("g") {
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
 	  .y1(function(d) { return y(d.close); })
-	  .curve(d3.curveBasisOpen);
+	  .curve(d3.curveBasis);
 	  
 	  svg.append("path")
 	  .datum(myData)
@@ -338,7 +338,7 @@ if ("g") {
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
 	  .y1(function(d) { return y(d.BlackW); })
-	  .curve(d3.curveBasisOpen);
+	  .curve(d3.curveBasis);
 	  
 	   svg.append("path")
 	  .datum(myData)
@@ -351,7 +351,7 @@ if ("g") {
 	  .x(function(d) { return x(d.date); })
 	  .y0(height)
 	  .y1(function(d) { return y(d.HispanicW); })
-	  .curve(d3.curveBasisOpen);
+	  .curve(d3.curveBasis);
 	  
 	   svg.append("path")
 	  .datum(myData)
@@ -363,42 +363,42 @@ if ("g") {
       var valueline = d3.line() // Change from: d3.svg.line()
       .x(function(d) { return x(d.date); })
       .y(function(d) { return y(d.close); })
-      .curve(d3.curveBasisOpen);
+      .curve(d3.curveBasis);
 
      var valueline2 = d3.line()	
      .x(function(d) { return x(d.date); })
      .y(function(d) { return y(d.open); })
-     .curve(d3.curveBasisOpen);
+     .curve(d3.curveBasis);
      
      var valueline3 = d3.line()	
      .x(function(d) { return x(d.date); })
      .y(function(d) { return y(d.AsianM); })
-     .curve(d3.curveBasisOpen);
+     .curve(d3.curveBasis);
      
         var valueline4 = d3.line()	
      .x(function(d) { return x(d.date); })
      .y(function(d) { return y(d.HispanicM); })
-     .curve(d3.curveBasisOpen);
+     .curve(d3.curveBasis);
      
         var valueline5 = d3.line()	
      .x(function(d) { return x(d.date); })
      .y(function(d) { return y(d.AsianF); })
-     .curve(d3.curveBasisOpen);
+     .curve(d3.curveBasis);
      
        var valueline6 = d3.line()	
      .x(function(d) { return x(d.date); })
      .y(function(d) { return y(d.BlackM); })
-     .curve(d3.curveBasisOpen);
+     .curve(d3.curveBasis);
      
         var valueline7 = d3.line()	
      .x(function(d) { return x(d.date); })
      .y(function(d) { return y(d.BlackF); })
-     .curve(d3.curveBasisOpen);
+     .curve(d3.curveBasis);
      
          var valueline8 = d3.line()	
      .x(function(d) { return x(d.date); })
      .y(function(d) { return y(d.HispanicF); })
-     .curve(d3.curveBasisOpen);
+     .curve(d3.curveBasis);
      
       svg.append("path")		// Add the valueline path.
         .attr("class", "line")
