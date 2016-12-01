@@ -305,6 +305,8 @@ if ("g") {
     svg.append("path")          // Add the valuelineWM path.
         .style("stroke", "blue")
         .attr("d", valuelineWM(myData));
+        
+    
         	  
 	  var asianW = d3.area()	
 	  .x(function(d) { return x(d.date); })
@@ -393,6 +395,13 @@ if ("g") {
       svg.append("path")		// Add the valuelineWW path.
         .attr("class", "line")
         .attr("d", valuelineWW(myData));
+       
+    svg.append("text")
+       .attr("transform", "translate("+(width+3)+","+y(myData[0].close)+")")
+       .attr("dy", ".35em")
+       .attr("text-anchor", "start")
+       .style("fill", "magenta")
+       .text("White Females");
           
 	    var blackW = d3.area()	
 	  .x(function(d) { return x(d.date); })
@@ -438,44 +447,6 @@ if ("g") {
         .style("stroke", "HotPink")
         .attr("d", valuelineHF(myData));
 
-/*      
-      svg.append("g")			// Add the X Axis
-        .attr("class", "x axis")
-        .attr("transform", "translate(0," + height + ")")
-        .call(xAxis);
-
-      svg.append("text")             // text label for the x axis
-        .attr("x", width / 2 )
-        .attr("y",  height + margin.bottom)
-        .style("text-anchor", "middle")
-        .text("Date");
-      
-      svg.append("g")			// Add the Y Axis
-        .attr("class", "y axis")
-        .call(yAxis);
-
-      svg.append("text")
-       .attr("transform", "translate("+(width+3)+","+y(myData[0].open)+")")
-       .attr("dy", ".35em")
-       .attr("text-anchor", "start")
-       .style("fill", "blue")
-       .text("White Males");
-       
-       svg.append("text")
-       .attr("transform", "translate("+(width+3)+","+y(myData[0].close)+")")
-       .attr("dy", ".35em")
-       .attr("text-anchor", "start")
-       .style("fill", "magenta")
-       .text("White Females");
-
-	  svg.append("text")
-        .attr("transform", "rotate(-90)")
-        .attr("y", 0 - margin.left)
-        .attr("x",0 - (height / 2))
-        .attr("dy", "1em")
-        .style("text-anchor", "middle")
-        .text("U.S. Dollars");
-*/
       });
       };
     </script>
