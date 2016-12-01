@@ -329,7 +329,7 @@ if ("g") {
 	  .datum(myData)
 	   .attr("class", "area")
 	   .attr("d", whiteW)
-	   .style("fill", "LightPink")
+	   .style("fill", "PeachPuff")
 	  .style("stroke-width", "0");
 
 		  
@@ -360,79 +360,79 @@ if ("g") {
 	  .style("fill", "IndianRed")
 	  .style("stroke-width", "0");
  
- /*       
-      var valueline = d3.line() // Change from: d3.svg.line()
-      .x(function(d) { return x(d.date); })
-      .y(function(d) { return y(d.close); })
-      .curve(d3.curveBasis);
-
-     var valueline2 = d3.line()	
-     .x(function(d) { return x(d.date); })
-     .y(function(d) { return y(d.open); })
-     .curve(d3.curveBasis);
-     
-     var valueline3 = d3.line()	
+      var valuelineAM = d3.line()	
      .x(function(d) { return x(d.date); })
      .y(function(d) { return y(d.AsianM); })
      .curve(d3.curveBasis);
      
-        var valueline4 = d3.line()	
+      svg.append("path")          // Add the valuelineAM path.
+        .style("stroke", "navy")
+        .attr("d", valuelineAM(myData));
+ 
+    var valuelineWM = d3.line()	
      .x(function(d) { return x(d.date); })
-     .y(function(d) { return y(d.HispanicM); })
+     .y(function(d) { return y(d.open); })
      .curve(d3.curveBasis);
      
-        var valueline5 = d3.line()	
+    svg.append("path")          // Add the valuelineWM path.
+        .style("stroke", "blue")
+        .attr("d", valuelineWM(myData));
+       
+	var valuelineAW = d3.line()	
      .x(function(d) { return x(d.date); })
-     .y(function(d) { return y(d.AsianF); })
+     .y(function(d) { return y(d.AsianW); })
      .curve(d3.curveBasis);
      
-       var valueline6 = d3.line()	
+    svg.append("path")          // Add the valuelineAW path.
+        .style("stroke", "red")
+        .attr("d", valuelineAW(myData));  
+    
+    var valuelineBM = d3.line()	
      .x(function(d) { return x(d.date); })
      .y(function(d) { return y(d.BlackM); })
      .curve(d3.curveBasis);
      
-        var valueline7 = d3.line()	
+    svg.append("path")          // Add the valuelineBM path.
+        .style("stroke", "Teal")
+        .attr("d", valuelineBM(myData));
+            
+        var valuelineHM = d3.line()	
      .x(function(d) { return x(d.date); })
-     .y(function(d) { return y(d.BlackF); })
+     .y(function(d) { return y(d.HispanicM); })
      .curve(d3.curveBasis);
      
-         var valueline8 = d3.line()	
+      svg.append("path")          // Add the valuelineHM path.
+        .style("stroke", "slate")
+        .attr("d", valuelineHM(myData));
+     
+    var valuelineWW = d3.line() // Change from: d3.svg.line()
+      .x(function(d) { return x(d.date); })
+      .y(function(d) { return y(d.close); })
+      .curve(d3.curveBasis);
+           
+      svg.append("path")		// Add the valuelineWW path.
+        .attr("class", "line")
+        .attr("d", valuelineWW(myData));
+     
+        var valuelineBW = d3.line()	
+     .x(function(d) { return x(d.date); })
+     .y(function(d) { return y(d.BlackW); })
+     .curve(d3.curveBasis);
+     
+    svg.append("path")          // Add the valuelineBW path.
+        .style("stroke", "fuschia")
+        .attr("d", valuelineBW(myData));
+        
+         var valuelineHF = d3.line()	
      .x(function(d) { return x(d.date); })
      .y(function(d) { return y(d.HispanicF); })
      .curve(d3.curveBasis);
-     
-      svg.append("path")		// Add the valueline path.
-        .attr("class", "line")
-        .attr("d", valueline(myData));
 
-      svg.append("path")          // Add the valueline2 path.
-        .style("stroke", "blue")
-        .attr("d", valueline2(myData));
-        
-      svg.append("path")          // Add the valueline2 path.
-        .style("stroke", "navy")
-        .attr("d", valueline3(myData));
-        
-        svg.append("path")          // Add the valueline2 path.
-        .style("stroke", "slate")
-        .attr("d", valueline4(myData));
-        
-        svg.append("path")          // Add the valueline2 path.
-        .style("stroke", "red")
-        .attr("d", valueline5(myData));
-        
-         svg.append("path")          // Add the valueline2 path.
-        .style("stroke", "teal")
-        .attr("d", valueline6(myData));
-        
-        svg.append("path")          // Add the valueline2 path.
-        .style("stroke", "fuschia")
-        .attr("d", valueline7(myData));
-        
-        svg.append("path")          // Add the valueline2 path.
+	 svg.append("path")          // Add the valueline2 path.
         .style("stroke", "HotPink")
-        .attr("d", valueline8(myData));
-        
+        .attr("d", valuelineHF(myData));
+
+/*      
       svg.append("g")			// Add the X Axis
         .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
