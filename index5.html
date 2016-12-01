@@ -420,12 +420,12 @@ if ("g") {
      .curve(d3.curveBasis);
      
     svg.append("path")          // Add the valuelineBW path.
-        .style("stroke", "fuschia")
+        .style("stroke", "RebeccaPurple")
         .attr("d", valuelineBW(myData));
         
          var valuelineHF = d3.line()	
      .x(function(d) { return x(d.date); })
-     .y(function(d) { return y(d.HispanicF); })
+     .y(function(d) { return y(d.HispanicW); })
      .curve(d3.curveBasis);
 
 	 svg.append("path")          // Add the valueline2 path.
