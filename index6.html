@@ -538,14 +538,17 @@ function updateData() {
 
   // Make the changes
 
-        svg.selectAll(".area")   // change the area
-            .duration(750)
-            .attr("d", (myData));
-
+         svg.selectAll(".area")
+            .myData(function (d) {
+                return d.values;
+            })
+            .transition()
+        	.duration(750);
+/*
 	    svg.selectAll(".line")
             .duration(750)
             .attr("d", (myData));
-
+*/
         svg.select(".x.axis") // change the x axis
             .duration(750)
             .call(xAxis);
