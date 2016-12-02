@@ -538,17 +538,26 @@ function updateData() {
 
   // Make the changes
 
- 		 svg.selectAll(".area")
-            .data(function (d) {
-                return d.values;
-            })
-            .transition()
-        	.duration(750);
-/*
-	    svg.selectAll(".line")
+        svg.selectAll(".area")   // change the area
             .duration(750)
-            .attr("d", (myData));
-*/
+            .attr("d", (myData))
+        	.attr("d", asianW(myData))     
+            .attr("d", blackM(myData))
+       		.attr("d", hispanicM(myData))
+       		.attr("d", whiteW(myData))
+      		.attr("d", blackW(myData))
+       		.attr("d", hispanicW(myData));
+
+	    svg.select(".line")
+            .duration(750)
+            .attr("d", valuelineAM(myData))
+			.attr("d", valuelineWM(myData))
+       		.attr("d", valuelineBM(myData))
+       		.attr("d", valuelineHM(myData))
+       		.attr("d", valuelineWM(myData))
+       		.attr("d", valuelineBW(myData))
+       		.attr("d", valuelineHW(myData));
+
         svg.select(".x.axis") // change the x axis
             .duration(750)
             .call(xAxis);
