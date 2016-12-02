@@ -538,9 +538,9 @@ function updateData() {
 
   // Make the changes
 
-        svg.selectAll(".area")   // change the area
+        svg.select(".area")   // change the area
             .duration(750)
-            .attr("d", (myData))
+            .attr("d", whiteManArea(myData))
         	.attr("d", asianW(myData))     
             .attr("d", blackM(myData))
        		.attr("d", hispanicM(myData))
