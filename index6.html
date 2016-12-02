@@ -539,7 +539,7 @@ function updateData() {
   // Make the changes
 
          svg.selectAll(".area")
-            .myData(function (d) {
+            .data(function (d) {
                 return d.values;
             })
             .transition()
