@@ -6,6 +6,7 @@ body {
 h1 {
   font: 20px American Typewriter;
   text-align: center;
+  margin-left: 60px;
 }
 
 path {
@@ -32,4 +33,8 @@ path {
 
 .grid path {
   stroke-width: 0;
+}
+
+p {
+	  margin-left: 60px;
 }
