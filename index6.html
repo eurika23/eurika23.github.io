@@ -541,7 +541,7 @@ var asianManArea = newGraphs.append("path")
 	 			.datum(myData)
                 .attr("class", "area")
                 .attr("d", blackM)
-                .style("fill", "blackM")
+                .style("fill", "AsianM")
                 .style("stroke-width", "0");
     
 
@@ -550,7 +550,7 @@ var asianManArea = newGraphs.append("path")
 
   // Make the changes
   
-asianManArea.transition().attr('d', AsianM)
+asianManArea.transition().attr('d', newAsianMValues)
 			.duration (750);
 
 
