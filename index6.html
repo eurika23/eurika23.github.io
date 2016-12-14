@@ -533,12 +533,24 @@ function updateData() {
         .attr("class", "y axis")
         .call(yAxis);
 */
+
+var newGraphs = d3.select('svg').append('g'); <-- make a new area for the graphs you want to create
+
+var asianManArea = newGraphs.append("path")	
+	 			.datum(myData)
+                .attr("class", "area")
+                .attr("d", blackM)
+                .style("fill", "blackM")
+                .style("stroke-width", "0");
+	  			.curve(d3.curveBasis);
+    
+asianManArea.transition().attr('d', AsianM);
          // Select the section we want to apply our changes to
     var svg = d3.select("body").transition();
 
   // Make the changes
   
-  asianManArea.transition().attr('d', AsianM);
+
 
 
         /*svg.select(".area")   // change the area
