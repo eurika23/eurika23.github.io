@@ -106,7 +106,9 @@ function make_y_gridlines() {
 	  svg.append("path")
 	  .datum(myData)
 	  .attr("class", "area")
-	  .attr("d", area);
+	  .attr("d", area)
+	  .style("fill", "FF99FF")
+	  .style("stroke-width", "0");
       
       var valueline = d3.line() // Change from: d3.svg.line()
       .x(function(d) { return x(d.date); })
@@ -328,7 +330,7 @@ if ("g") {
 	  .datum(myData)
 	  .attr("class", "area")
 	  .attr("d", asianW)
-	  .style("fill", "FF99FF")
+	  .style("fill", "FF66FF")
 	  .style("stroke-width", "0");
 	  
 	 /* var valuelineAW = d3.line()	
@@ -343,9 +345,9 @@ if ("g") {
 
      svg.append("text")
        .attr("transform", "translate("+(width+3)+","+y(myData[0].AsianW)+")")
-       .attr("dy", "-.35em")
+       .attr("dy", "-.10em")
        .attr("text-anchor", "start")
-       .style("fill", "FF99FF")
+       .style("fill", "FF66FF")
        .text("Asian Females");
 	
  	   var blackM = d3.area()	
@@ -373,7 +375,7 @@ if ("g") {
   
      svg.append("text")
        .attr("transform", "translate("+(width+3)+","+y(myData[0].BlackM)+")")
-       .attr("dy", "-.15em")
+       .attr("dy", "15em")
        .attr("text-anchor", "start")
        .style("fill", "0000FF")
        .text("Black Males");
@@ -388,7 +390,7 @@ if ("g") {
 	  .datum(myData)
 	  .attr("class", "area")
 	  .attr("d", hispanicM)
-	  .style("fill", "0000CC")
+	  .style("fill", "000099")
 	  .style("stroke-width", "0");
 	
 	/*var valuelineHM = d3.line()	
@@ -403,9 +405,9 @@ if ("g") {
 	
      svg.append("text")
        .attr("transform", "translate("+(width+3)+","+y(myData[0].HispanicM)+")")
-       .attr("dy", ".75em")
+       .attr("dy", "1em")
        .attr("text-anchor", "start")
-       .style("fill", "0000CC")
+       .style("fill", "000099")
        .text("Hispanic Males");
 
 	  var whiteW = d3.area()	
@@ -418,7 +420,7 @@ if ("g") {
 	  .datum(myData)
 	   .attr("class", "area")
 	   .attr("d", whiteW)
-	   .style("fill", "FF66FF")
+	   .style("fill", "FF00FF")
 	  .style("stroke-width", "0");
 
 	  /*var valuelineWW = d3.line() // Change from: d3.svg.line()
@@ -433,9 +435,9 @@ if ("g") {
       
     svg.append("text")
        .attr("transform", "translate("+(width+3)+","+y(myData[0].close)+")")
-       .attr("dy", ".5em")
+       .attr("dy", ".75em")
        .attr("text-anchor", "start")
-       .style("fill", "FF66FF")
+       .style("fill", "FF00FF")
        .text("White Females");
           
 	    var blackW = d3.area()	
@@ -448,7 +450,7 @@ if ("g") {
 	  .datum(myData)
 	  .attr("class", "area")
 	  .attr("d", blackW)
-	  .style("fill", "FF00FF")
+	  .style("fill", "CC00CC")
 	  .style("stroke-width", "0");
 
    /* var valuelineBW = d3.line()	
@@ -463,9 +465,9 @@ if ("g") {
 
      svg.append("text")
        .attr("transform", "translate("+(width+3)+","+y(myData[0].BlackW)+")")
-       .attr("dy", ".5em")
+       .attr("dy", ".75em")
        .attr("text-anchor", "start")
-       .style("fill", "FF00FF")
+       .style("fill", "CC00CC")
        .text("Black Females");
        
   var hispanicW = d3.area()	
@@ -478,7 +480,7 @@ if ("g") {
 	  .datum(myData)
 	  .attr("class", "area")
 	  .attr("d", hispanicW)
-	  .style("fill", "CC00CC")
+	  .style("fill", "660066")
 	  .style("stroke-width", "0");
         
    /*var valuelineHF = d3.line()	
@@ -493,9 +495,9 @@ if ("g") {
 
      svg.append("text")
        .attr("transform", "translate("+(width+3)+","+y(myData[0].HispanicW)+")")
-       .attr("dy", ".5em")
+       .attr("dy", ".75em")
        .attr("text-anchor", "start")
-       .style("fill", "CC00CC")
+       .style("fill", "660066")
        .text("Hispanic Females");
 
   svg.append("g")			// Add the X Axis
