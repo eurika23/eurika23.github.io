@@ -537,8 +537,11 @@ function updateData() {
     var svg = d3.select("body").transition();
 
   // Make the changes
+  
+  asianManArea.transition().attr('d', AsianM);
 
-        svg.select(".area")   // change the area
+
+        /*svg.select(".area")   // change the area
             .duration(750)
             .attr("d", whiteManArea(myData))
         	.attr("d", asianW(myData))     
@@ -557,6 +560,7 @@ function updateData() {
        		.attr("d", valuelineWM(myData))
        		.attr("d", valuelineBW(myData))
        		.attr("d", valuelineHW(myData));
+       		*/
 
         svg.select(".x.axis") // change the x axis
             .duration(750)
