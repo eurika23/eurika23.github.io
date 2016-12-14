@@ -544,13 +544,14 @@ var asianManArea = newGraphs.append("path")
                 .style("stroke-width", "0");
 	  			.curve(d3.curveBasis);
     
-asianManArea.transition().attr('d', AsianM);
+
          // Select the section we want to apply our changes to
     var svg = d3.select("body").transition();
 
   // Make the changes
   
-
+asianManArea.transition().attr('d', AsianM)
+			.duration (750);
 
 
         /*svg.select(".area")   // change the area
