@@ -1,18 +1,11 @@
 body { 
   font: 14px Arial;
-  width: 600px;
+  width: 800px;
 }
 
 h1 {
   font: 20px American Typewriter;
   text-align: center;
-  padding-left: 60px;
-}
-
-path {
-  stroke: magenta;
-  stroke-width: 1;
-  fill: none;
 }
 
 .axis path,
@@ -23,7 +16,6 @@ path {
   stroke-width: 2;
   shape-rendering: crispEdges;
 }
-
 
 .grid line {
   stroke: lightgrey;
