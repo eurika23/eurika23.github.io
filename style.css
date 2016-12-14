@@ -23,11 +23,6 @@ path {
   shape-rendering: crispEdges;
 }
 
-.area {
-    fill: yellow;
-    stroke-width: 0;
-
-}
 
 .grid line {
   stroke: lightgrey;
@@ -39,3 +34,6 @@ path {
   stroke-width: 0;
 }
 
+.gridLabel {
+	font: 14pxAmerican Typewriter;
+	}
