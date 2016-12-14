@@ -533,8 +533,9 @@ function updateData() {
         .attr("class", "y axis")
         .call(yAxis);
 */
+//<-- make a new area for the graphs you want to create
 
-var newGraphs = d3.select('svg').append('g'); <-- make a new area for the graphs you want to create
+var newGraphs = d3.select('svg').append('g'); 
 
 var asianManArea = newGraphs.append("path")	
 	 			.datum(myData)
