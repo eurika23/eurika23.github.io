@@ -139,6 +139,7 @@ function make_y_gridlines() {
         .attr("x", width / 2 )
         .attr("y",  height + margin.bottom)
         .style("text-anchor", "middle")
+        .style("font", "American Typewriter")
         .text("Date");
       
       svg.append("g")			// Add the Y Axis
@@ -167,6 +168,7 @@ function make_y_gridlines() {
         .attr("x",0 - (height / 2))
         .attr("dy", "1em")
         .style("text-anchor", "middle")
+        .style("font", "American Typewriter")
         .text("U.S. Dollars")
         });
 
