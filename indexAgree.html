@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style> /* set the CSS */
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px;
+}
+
+</style>
+<body>
+
+<!-- load the d3.js library -->    	
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+// set the dimensions and margins of the graph
+var margin = {top: 20, right: 20, bottom: 100, left: 70},
+    width = 960 - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom;
+
+
+// set the ranges
+var x = d3.scale().range([0, width]);
+var y = d3.scaleLinear().range([height, 0]);
+
+// define the line
+var valueline = d3.line()
+    .x(function(d) { return x(d.label); })
+    .y(function(d) { return y(d.after); });
+
+// append the svg obgect to the body of the page
+// appends a 'group' element to 'svg'
+// moves the 'group' element to the top left margin
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+// Get the data
+d3.csv("dataAgree.csv", function(error, data) {
+  if (error) throw error;
+
+  // format the data
+  data.forEach(function(d) {
+      d.label = +d.label;
+      d.after = +d.after;
+  });
+
+  // Scale the range of the data
+  x.domain(d3.extent(data, function(d) { return d.label; }));
+  y.domain([0, d3.max(data, function(d) { return d.after; })]);
+
+  // Add the valueline path.
+  svg.append("path")
+      .data([data])
+      .attr("class", "line")
+      .attr("d", valueline);
+
+  // Add the x Axis
+  svg.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x));
+
+  // text label for the x axis
+  svg.append("text")             
+      .attr("transform",
+            "translate(" + (width/2) + " ," + 
+                           (height + margin.top + 20) + ")")
+      .style("text-anchor", "middle")
+      .text("label");
+
+  // Add the y Axis
+  svg.append("g")
+      .call(d3.axisLeft(y));
+
+  // text label for the y axis
+  svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 0 - margin.left)
+      .attr("x",0 - (height / 2))
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Value");      
+
+var beforeArea = d3.area()	
+	  .x(function(d) { return x(d.label); })
+	  .y0(height)
+	  .y1(function(d) { return y(d.before); })
+	  .curve(d3.curveBasis);
+	  
+	   svg.append("path")
+	  .datum(myData)
+	  .attr("class", "area")
+	  .attr("d", beforeArea)
+	  .style("fill", "cyan")
+	  .style("stroke-width", "0");
+});
+
+ var afterArea = d3.area()	
+	  .x(function(d) { return x(d.label); })
+	  .y0(height)
+	  .y1(function(d) { return y(d.after); })
+	  .curve(d3.curveBasis);
+	  
+	  svg.append("path")
+	  .datum(myData)
+	  .attr("class", "area")
+	  .attr("d", afterArea)
+	  .style("fill", "Aquamarine")
+	  .style("stroke-width", "0");
+
+ svg.append("g")			// Add the X Axis
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(xAxis);
+
+      svg.append("text")             // text label for the x axis
+        .attr("x", width / 2 )
+        .attr("y",  height + margin.bottom)
+        .style("text-anchor", "middle")
+        .text("Date");
+      
+      svg.append("g")			// Add the Y Axis
+        .attr("class", "y axis")
+        .call(yAxis);
+
+      svg.append("text")
+       .attr("class", "axisLabel")
+       .attr("transform", "translate("+(width+3)+","+y(myData[0].after)+")")
+       .attr("dy", ".35em")
+       .attr("text-anchor", "start")
+       .style("fill", "blue")
+       .text("After Collaborative Project");
+       
+       svg.append("text")
+       .attr("class", "axisLabel")
+       .attr("transform", "translate("+(width+3)+","+y(myData[0].before)+")")
+       .attr("dy", ".35em")
+       .attr("text-anchor", "start")
+       .style("fill", "magenta")
+       .text("Before Collaborative Project");
+
+	  svg.append("text")
+        .attr("transform", "rotate(-90)")
+        .attr("y", 0 - margin.left)
+        .attr("x",0 - (height / 2))
+        .attr("dy", "1em")
+        .style("text-anchor", "middle")
+        .text("Pre-Post Retrospective Survey 'Agree' and 'Highly Agree' Responses");
+        });
+</script>
+</body>
+
+     
